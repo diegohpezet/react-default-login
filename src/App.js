@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 const path = require('path');
-const bcrypt = require('bcrypt');
+
 const mongoose = require('mongoose');
 
 // Import routes

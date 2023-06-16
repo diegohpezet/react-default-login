@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user')
 
-router.get('/', (req, res) => res.render('index.ejs'))
+router.get('/', (req, res) => res.render('index.ejs', {registerFailed: false}))
 router.post('/register', (req,res) => {
     const { username, email, password } = req.body;
 
     const user = new User({username, email, password})
     user.save(err => {
         if(err) {
-            res.status(500).send('Error');
+            res.render('index', {regMessage: "Username already taken!", registerFailed: true})
             console.log(err)
         } else {
-            res.status(200).send('Success')
+            res.render('main', {data: user})
         }
     })
 })
@@ -21,17 +21,17 @@ router.post('/authenticate', (req, res) => {
 
     User.findOne({username}, (err, user) => {
         if(err) {
-            res.status(500).send('User authentication error')
+            res.render('index', {loginMessage: "User authentication error"})
         } else if (!user) {
-            res.status(500).send('User does not exist')
+            res.render('index', {loginMessage: "User does not exist"})
         } else {
             user.comparePassword(password, (err, result) => {
                 if(err){
-                    res.status(500).send('Authentication error')
+                    res.render('index', {loginMessage: "Authentication error"})
                 } else if (result) {
-                    res.status(200).send("User validated properly");
+                    res.render('main', {data: user});
                 } else {
-                    res.status(500).send('Check the datafields')
+                    res.render('index', {loginMessage: "Invalid password"})
                 }
             });
         }
