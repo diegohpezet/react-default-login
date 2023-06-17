@@ -79,5 +79,7 @@ if (!regMessage) {
 </script>
 <% if (registerFailed) { %>
         <script>toggleForm();</script>
-<%  }  %>
+<%  } else {
+    var registerFailed = false;        
+}  %>
 </html>
