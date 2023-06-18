@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // MongoDB connection
-const mongo_uri = 'mongodb+srv://dev:dev@test.pjj1bx4.mongodb.net/'
+const mongo_uri = 'YOUR MONGODB DATABASE URL'
 
 mongoose.connect(mongo_uri, {useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => console.log('Connected Successfully'))
