@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section {
   position: relative;
   min-height: 100vh;
-  background-color: #10101f;
+  background-color: #02020e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +24,7 @@ section .container {
   background: #fff;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  box-shadow: 1px 1px 75px -9px rgba(238, 205, 241, 0.75);
 }
 
 section .container .user {
@@ -90,7 +91,7 @@ section .container .user .formBx form input {
   font-weight: 300;
 }
 
-section .container .user .formBx form input[type='submit'] {
+section .container .user .formBx form input[type="submit"] {
   max-width: 100px;
   background: #677eff;
   color: #fff;
@@ -118,7 +119,7 @@ section .container .user .formBx form .signup a {
 }
 
 section .container .user .formBx .formMsg {
-  color:#a13b3b;
+  color: #a13b3b;
 }
 
 section .container .signupBx {
